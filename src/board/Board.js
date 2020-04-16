@@ -72,13 +72,13 @@ class Board extends Component {
         currentLeft = 0;
       }
 
-      if (currentTop + this.props.foodSize >= (window.innerHeight = this.props.border - this.props.topScoreBoard)) {
+      if (currentTop + this.props.foodSize >= window.innerHeight - this.props.border - this.props.topScoreBoard) {
         break;
       }
 
       const position = { left: currentLeft, top: currentTop };
       currentLeft = currentLeft + this.props.foodSize;
-      foods.push(<Food ref={this["food" + 1]} position={position} key={i} />);
+      foods.push(<Food ref={this["food" + i]} position={position} key={i} />);
     }
     // TODO: implement food rendering
 
